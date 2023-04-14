@@ -1,0 +1,40 @@
+name: build
+
+# Controls when the action will run
+# Workflow begins with push or PR events
+# Focuses on the master branch only
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Get mdl style file from dotfiles
+        env:
+          # yamllint disable-line rule:line-length
+          STYLE_FILE: https://raw.githubusercontent.com/bewuethr/dotfiles/master/.config/mdl/style.rb
+        run: curl "$STYLE_FILE" > .github/workflows/style.rb
+      - name: Run the Markdown linter
+        uses: bewuethr/mdl-action@v1
+        with:
+          style-file: .github/workflows/style.rb
+  gatorgrader:
+    runs-on: ubuntu-latest
+    name: Run GatorGrader
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      # Run GatorGrader: see config/gatorgrader.yml
+      - name: Run GatorGrader
+        if: always()
+        run:  |
+          pip install gatorgrade
+          gatorgrade --config config/gatorgrade.yml
