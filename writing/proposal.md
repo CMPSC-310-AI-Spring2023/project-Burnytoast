@@ -1,6 +1,6 @@
 # Project Proposal
 
-## TODO: Add your name(s)
+## TODO: Andrew Briercheck, Miles Franck, Nic Ingerson
 
 ## Proposed Application
 
