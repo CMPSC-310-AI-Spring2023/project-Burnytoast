@@ -1,6 +1,6 @@
 # Project Report
 
-## TODO: Add your name(s)
+## TODO: Andrew Briercheck, Miles Franck, and Nic Ingerson
 
 ## Project Summary
 
