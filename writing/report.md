@@ -1,10 +1,12 @@
 # Project Report
 
-## Miles, Nick, Andrew
+## TODO: Andrew Briercheck, Miles Franck, and Nic Ingerson
 
 ## Project Summary
 
-We plan to make a program that can produce a politicians speech
+For our final project, we are developing a synthetic politician. To do this, we are creating a text generator; taking
+speeches from previous American presidents to create a new one. Then, we are going to attempt to do some voice synthesis
+to read the speech.
 
 ## Motivation
 
