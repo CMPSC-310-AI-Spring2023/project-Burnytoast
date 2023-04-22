@@ -1,10 +1,10 @@
 # Project Report
 
-## TODO: Add your name(s)
+## Miles, Nick, Andrew
 
 ## Project Summary
 
-TODO
+We plan to make a program that can produce a politicians speech
 
 ## Motivation
 
