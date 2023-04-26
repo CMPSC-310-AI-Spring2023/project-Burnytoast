@@ -178,7 +178,7 @@ for input_example_batch, target_example_batch in dataset.take(1):
     print(example_batch_predictions.shape, '# (batch_size, sequence_length, vocab_size)')
 
 # Prints the model summary
-model.summary()
+#model.summary()
 
 # sample from the output distribution, to get actual character indices. 
 sampled_indices = tf.random.categorical(example_batch_predictions[0], num_samples=1)
