@@ -5,6 +5,29 @@ import time
 import tensorflow as tf
 
 
+class MyModel(tf.keras.Model):
+
+  def __init__(self, vocab_size, embedding_dim, rnn_units):
+    super().__init__(self)
+    self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
+    self.gru = tf.keras.layers.GRU(rnn_units,
+                                   return_sequences=True,
+                                   return_state=True)
+    self.dense = tf.keras.layers.Dense(vocab_size)
+
+  def call(self, inputs, states=None, return_state=False, training=False):
+    """
+    Call the model for training.
+    """
+    x = inputs
+    x = self.embedding(x, training=training)
+    if states is None:
+      states = self.gru.get_initial_state(x)
+    x, states = self.gru(x, initial_state=states, training=training)
+    x = self.dense(x, training=training)
+    return (x, states) if return_state else x
+
+
 class OneStep(tf.keras.Model):
 
 
@@ -53,29 +76,6 @@ class OneStep(tf.keras.Model):
 
     # Return the characters and model state.
     return predicted_chars, states
-  
-
-class MyModel(tf.keras.Model):
-
-  def __init__(self, vocab_size, embedding_dim, rnn_units):
-    super().__init__(self)
-    self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
-    self.gru = tf.keras.layers.GRU(rnn_units,
-                                   return_sequences=True,
-                                   return_state=True)
-    self.dense = tf.keras.layers.Dense(vocab_size)
-
-  def call(self, inputs, states=None, return_state=False, training=False):
-    """
-    Call the model for training.
-    """
-    x = inputs
-    x = self.embedding(x, training=training)
-    if states is None:
-      states = self.gru.get_initial_state(x)
-    x, states = self.gru(x, initial_state=states, training=training)
-    x = self.dense(x, training=training)
-    return (x, states) if return_state else x
 
 
 with open('src/PoliticianBeliefDoc.txt', 'r') as f:
@@ -178,7 +178,7 @@ for input_example_batch, target_example_batch in dataset.take(1):
     print(example_batch_predictions.shape, '# (batch_size, sequence_length, vocab_size)')
 
 # Prints the model summary
-#model.summary()
+# model.summary()
 
 # sample from the output distribution, to get actual character indices. 
 sampled_indices = tf.random.categorical(example_batch_predictions[0], num_samples=1)
