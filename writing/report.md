@@ -1,6 +1,6 @@
 # Project Report
 
-## TODO: Andrew Briercheck, Miles Franck, and Nic Ingerson
+## : Andrew Briercheck, Miles Franck, and Nic Ingerson
 
 ## Project Summary
 
@@ -34,8 +34,8 @@ TODO
 
 ## Ethical Implications
 
-TODO
+Using text generation technology to impersonate politicians and spread false information can be highly unethical and damaging to individuals and society. It is important to approach the use of this technology with caution and to make sure we understand the potential consequences before using it
 
 ## Team Working Strategy (if worked in a team)
 
-TODO
+Our team worked together on all aspects of the project. We searched for speeches to use in training, collaborated on coding tasks, and solved problems together.
