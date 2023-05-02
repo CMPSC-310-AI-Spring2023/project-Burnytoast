@@ -1,7 +1,7 @@
 import openai
 
 openai.organization = 'org-tiQjuNLO4GEneutRBVq6wVx6'
-openai.api_key = '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'
+openai.api_key = ''  # Add your API key here
 
 def generate_text(prompt, model, temperature=0.5, max_tokens=712):
     response = openai.Completion.create(
@@ -25,5 +25,5 @@ model = "text-davinci-002"
 generated_text = generate_text(prompt, model, temperature=0.5, max_tokens=712)
 print(generated_text)
 
-with open('speech.txt', 'w') as f:
+with open('politician/speech.txt', 'w') as f:
     f.write(generated_text)
