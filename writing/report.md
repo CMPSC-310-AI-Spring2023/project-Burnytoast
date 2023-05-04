@@ -10,11 +10,11 @@ to read the speech.
 
 ## Motivation
 
-TODO
+This felt like an enjoyable extention from the previous projects we pursued. Developing a "personality" of sorts seemed like a natural direction to take natural language processing in: seeing what the computer would be able to develop in a sense of "personality" we can understand.
 
 ## Background
 
-TODO
+To develop a sense of "personality" and "beliefs" for this project, we sat down in GFC and put together a document full of "beliefs" we wanted to be reflected in our "speech". After fleshing out a number of beliefs, we then fed it presential speeches to use as a reference, and hoped that it would regurgitate something in a similar vein.
 
 ## Project Implementation Details
 
@@ -26,9 +26,14 @@ To run the speech generator:
 4. After installing the `openai` package, navigate to the directory where you cloned the repository. Then, you need to navigate to the `src` directory and open the `text_generator.py` file. Edit the line of code with the comment `Add OpenAI API Key` to contain your OpenAI API key within the `''`.
 5. Finally, run the `text_generator.py` file by running the following command: `python3[/python/py] text_generator.py`
 
+To run PoliticanStableDiffusion.ipynb:
+1. Open in Colab
+2. Ensure the program is utilizing GPU (runtime > change runtime type > GPU)
+3. Run cell by cell, in order.
+
 ## Testing Details
 
-TODO
+The StableDiffusion was somewhat uncooperative: we found that relocating the files, transpoting the ipynb into VsCode did not work. After relocating to Colab, the program was cooperating some. The code was then trimmed an altered to fit our needs. The output has been 12 images that vary slightly on the contents: they tend to generally be pictures of generic politicians, sometimes with LGBTQ+ flags in the background, and facial features entering the uncanny valley. 
 
 ## Sample Output
 
