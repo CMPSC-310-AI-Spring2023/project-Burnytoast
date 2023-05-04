@@ -18,7 +18,13 @@ TODO
 
 ## Project Implementation Details
 
-TODO: include instructions on how to set up and run your project
+To run the speech generator:
+
+1. Make sure that python is installed on your system. To check this, run the following command: `python --version`. Otherwise, check the [documentation website](https://www.python.org) to find instructions on how to install python on your system.
+2. Next, you need to clone the repository from GitHub. You can do this by opening your command line interface, navigating to the directory where you want to clone the repository, and typing `git clone git@github.com:CMPSC-310-AI-Spring2023/project-Burnytoast.git`
+3. Then, you need to install the `openai` package with the following command: `pip install openai`.
+4. After installing the `openai` package, navigate to the directory where you cloned the repository. Then, you need to navigate to the `src` directory and open the `text_generator.py` file. Edit the line of code with the comment `Add OpenAI API Key` to contain your OpenAI API key within the `''`.
+5. Finally, run the `text_generator.py` file by running the following command: `python3[/python/py] text_generator.py`
 
 ## Testing Details
 
