@@ -44,7 +44,7 @@ I am committed to making your lives better, and I promise to always put your int
 
 ## Experimental Results
 
-TODO
+When attempting to write the text generation program, we ran into issues with how the program reads certain files and how that affects some variables. In order to overcome these issues, we decided to utilize the OpenAI API library to generate speeches based on a prompt; allowing for a more user-customizable politician in the end.
 
 ## Ethical Implications
 
